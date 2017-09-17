@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQUERY - Character Counter</title>
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+   
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main">
+       <div class="main_section">
+        <h1>JQuery - Character Counter</h1>
+        
+         <div class="form-group">
+          <textarea class="form-control" rows="8" cols="50" id="textBox" placeholder="Enter Text Here."></textarea>
+         </div>
+         
+         <h2 id="output"></h2>
+      </div>  
+    </div>
+    
+    
+    
+    
+    <div class="footer">
+        
+        <hr width="300px" class="divider">
+         <p class="credits">Credits To: </p>
+          <div class="MyImg">
+              <img src="my_img.jpg" alt="MyImg" class="img-circle">
+          </div>
+          
+          <p class="name">Tiyam Foyraz </p>
+    </div>
+
+
+
+
+
+
+
+<!--  JQUERY CDN  -->
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous">
+</script>
+
+<!--  JQUERY CUSTOM  -->
+<script>
+    
+$(document).ready(function(){
+      
+     $('#textBox').keyup(function(){
+      var maxText = 160;
+      var a = $('#textBox').val();
+         
+         
+      if (a.length >= maxText) {
+        $('#output').text('Limit has been reached.Use 160 letters only!').css("color","red");
+      } else {
+        var b = a.length;
+          if(b==1){
+              $('#output').show(); 
+             $('#output').text(b + " character used").css("color","green"); 
+          }
+          else if(b==0){
+             $('#output').hide(); 
+          }
+          
+          else if(b>=1){
+             $('#output').show(); 
+             $('#output').text(b + " characters used").css("color","green");
+          }
+        
+      }      
+  });
+    
+});
+    
+</script>
+</body>
+</html>
